@@ -230,4 +230,4 @@ if __name__ == '__main__':
     }
     model_id = 1
     epochs = 5
-    trainer.train(model_id, epochs, hyper_parameter, save_dir='kaggle/working/')
+    trainer.train(model_id, epochs, hyper_parameter, save_dir='/kaggle/working/')

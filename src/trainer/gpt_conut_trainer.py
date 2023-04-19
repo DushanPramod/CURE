@@ -28,7 +28,7 @@ class GPTCoNuTTrainer():
         self.valid_loader = valid_loader
         self.dictionary = dictionary
 
-        self.batch_size = 24
+        self.batch_size = 48
         self.load_size = 1200   # load 1200 samples from training data every time
 
         self.gpt_model = gpt_model

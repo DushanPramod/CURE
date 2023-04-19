@@ -204,8 +204,8 @@ class GPTCoNuTTrainer():
 
 
 if __name__ == '__main__':
-    device_ids = [0,1]
-    os.environ["CUDA_VISIBLE_DEVICES"] = "0, 1"
+    device_ids = [0]
+    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
     
     vocab_file = '/kaggle/working/vocabulary.txt'
     train_file = '/kaggle/working/training_bpe.txt'

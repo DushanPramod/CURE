@@ -231,5 +231,5 @@ if __name__ == '__main__':
         'dropout': 0.1,
     }
     model_id = 1
-    epochs = 5
+    epochs = 1
     trainer.train(model_id, epochs, hyper_parameter, save_dir='/kaggle/working/')

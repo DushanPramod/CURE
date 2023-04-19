@@ -145,6 +145,7 @@ class GPTCoNuTTrainer():
         for epoch in range(epochs):
             start_time = time.time()
             for i in range(0, self.train_loader.total_size, self.load_size):
+                print('epoch: {}, load: {}'.format(epoch, i))
                 oom = 0
                 self.train_loader.load_data(i, i + self.load_size)
                 indices = self.shuffle_dataset()

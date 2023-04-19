@@ -19,7 +19,7 @@ from gpt_conut_data_loader import GPTCoNuTDataLoader
 
 class GPTCoNuTTrainer():
     def __init__(self, train_loader, valid_loader, dictionary, gpt_file):
-        gpt_loaded = torch.load(gpt_file, map_location ='cpu')
+        gpt_loaded = torch.load(gpt_file)
         config = gpt_loaded['config']
         gpt_model = OpenAIGPTLMHeadModel(config).cuda()
         gpt_model.load_state_dict(gpt_loaded['model'])

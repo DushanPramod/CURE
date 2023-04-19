@@ -155,7 +155,7 @@ class GPTCoNuTTrainer():
                 samples = []
                 max_src, max_ctx, max_tgt = 0, 0, 0
                 while end < len(self.train_loader.dataset):
-                    print('epoch: {}, load: {}, end: {}'.format(epoch, i, end))
+                    # print('epoch: {}, load: {}, end: {}'.format(epoch, i, end))
                     sample = self.train_loader.dataset[indices[end]]
                     if max_ctx + len(sample['target']) >= 1023 \
                             or max_tgt + len(sample['prev_context']) >= 1023 \

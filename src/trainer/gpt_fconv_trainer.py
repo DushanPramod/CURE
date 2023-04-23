@@ -193,13 +193,13 @@ class GPTFConvTrainer():
 
 
 if __name__ == '__main__':
-    device_ids = [0, 1, 2, 3]
-    os.environ["CUDA_VISIBLE_DEVICES"] = "0,1,2,3"
+    device_ids = [0]
+    os.environ["CUDA_VISIBLE_DEVICES"] = "0"
     
-    vocab_file = GPT_FCONV_TRAINER_DIR + '../../data/vocabulary/vocabulary.txt'
-    train_file = GPT_FCONV_TRAINER_DIR + '../../data/data/training_bpe.txt'
-    valid_file = GPT_FCONV_TRAINER_DIR + '../../data/data/validation_bpe.txt'
-    gpt_file = GPT_FCONV_TRAINER_DIR + '../../data/models/code_gpt.pt'
+    vocab_file = '/home/jupyter/vocabulary.txt'
+    train_file = '/home/jupyter/training_bpe.txt'
+    valid_file = '/home/jupyter/validation_bpe.txt'
+    gpt_file = '/home/jupyter/CURE/data/models/code_gpt.pt'
 
     dictionary = Dictionary(vocab_file, min_cnt=0)
     print('dictionary initialized, vocab size:{}'.format(len(dictionary)))
@@ -216,4 +216,6 @@ if __name__ == '__main__':
         'decoder_convolutions': ((192, 5),) * 1,
         'dropout': 0.1,
     }
-    trainer.train(1, 2, hyper_parameter, save_dir=GPT_FCONV_TRAINER_DIR + '../../data/models/')
+    model_id = 1
+    epochs = 5
+    trainer.train(model_id, epochs, hyper_parameter, save_dir='/home/jupyter/')
